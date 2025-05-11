@@ -1,0 +1,17 @@
+Chẩn đoán: Nhiễm khuẩn đường tiết niệu, không xác định vị tri;Dai máu không xác dinh:
+( (N39.0;R31;) )[ghi chú:]
+
+STT (Hoạt chất) Biệt dược Số lượng
+
+1 (Levofloxacin) Volfacine 500mg 7.00 Viên
+Sáng Uống 1.00
+
+2 (Paracetamol (acetaminophen)) MYPARA ER 650mg 14.00 Viên
+
+Sáng Uống 1.00 Chiều Uống 1.00
+
+3 (Diclofenac) Voltaren 75mg 7.00 Viên
+
+Sáng Uống 1.00
+
+Ghi chú:uồng thuốc sau ăn
