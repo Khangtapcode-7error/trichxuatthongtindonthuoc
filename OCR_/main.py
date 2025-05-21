@@ -23,7 +23,7 @@ adaptive_thresh = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_
 # cv2.imwrite('adaptive_threshold_output.jpg', adaptive_thresh)
 # OCR
 # link to Tesseract 
-pytesseract.pytesseract.tesseract_cmd = r'C:\VS_CODE\OCR_\tesseract\tesseract.exe'
+pytesseract.pytesseract.tesseract_cmd = r'tesseract.exe'
 
 custom_config = r'--oem 3 --psm 6'
 text = pytesseract.image_to_string(adaptive_thresh,lang="vie+eng", config=custom_config)
