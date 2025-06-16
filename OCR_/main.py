@@ -2,6 +2,7 @@ import cv2
 import pytesseract
 import rotate_func1
 import os
+import re //new
 # read image
 img_path =r'bachmai_drug\Mau3 - Crop.jpg'
 img = cv2.imread(img_path)
@@ -27,11 +28,23 @@ pytesseract.pytesseract.tesseract_cmd = r'tesseract.exe'
 
 custom_config = r'--oem 3 --psm 6'
 text = pytesseract.image_to_string(adaptive_thresh,lang="vie+eng", config=custom_config)
-print(text)
+#print(text) // #new
+filtered_text = re.sub(
+    r"[^a-zA-Z0-9"
+    r"àáảãạăắằẳẵặâấầẩẫậđèéẻẽẹêếềểễệ"
+    r"ìíỉĩịòóỏõọôốồổỗộơớờởỡợ"
+    r"ùúủũụưứừửữựỳýỷỹỵ"
+    r"ÀÁẢÃẠĂẮẰẲẴẶÂẤẦẨẪẬĐÈÉẺẼẸÊẾỀỂỄỆ"
+    r"ÌÍỈĨỊÒÓỎÕỌÔỐỒỔỖỘƠỚỜỞỠỢ"
+    r"ÙÚỦŨỤƯỨỪỬỮỰỲÝỶỸỴ"
+    r"\s,;()]",  # giữ các ký tự đặc biệt và khoảng trắng
+    "", 
+    text
+)
 
 # create text and write
 with open(r"text.txt", "a", encoding="utf-8") as f:
-    f.writelines(text)
+    f.writelines(filtered_text)
 
 # cv2.waitKey(0)
 # cv2.destroyAllWindows()
